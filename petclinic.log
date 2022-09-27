@@ -3744,3 +3744,60 @@ java.lang.IllegalStateException: getWriter() has already been called for this re
 2022-09-27 23:30:17.916 DEBUG 17804 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
 2022-09-27 23:30:17.925 DEBUG 17804 --- [http-nio-8080-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
 2022-09-27 23:30:17.926 DEBUG 17804 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 500
+2022-09-27 23:35:20.730  INFO 2924 --- [restartedMain] c.e.petclinic.PetClinicApplication       : Starting PetClinicApplication using Java 17.0.2 on DESKTOP-VJAHNT7 with PID 2924 (C:\Users\kerim\IdeaProjects\PetClinic\target\classes started by kerim in C:\Users\kerim\IdeaProjects\PetClinic)
+2022-09-27 23:35:20.732  INFO 2924 --- [restartedMain] c.e.petclinic.PetClinicApplication       : The following 1 profile is active: "dev"
+2022-09-27 23:35:20.800  INFO 2924 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-27 23:35:20.800  INFO 2924 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-09-27 23:35:21.992  INFO 2924 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-27 23:35:22.001  INFO 2924 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-27 23:35:22.002  INFO 2924 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-27 23:35:22.265  INFO 2924 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-09-27 23:35:22.286  INFO 2924 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-27 23:35:22.287  INFO 2924 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1486 ms
+2022-09-27 23:35:22.635 DEBUG 2924 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-09-27 23:35:22.666  INFO 2924 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [public/index.html]
+2022-09-27 23:35:22.699 DEBUG 2924 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 7 mappings in 'requestMappingHandlerMapping'
+2022-09-27 23:35:22.716 DEBUG 2924 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-09-27 23:35:22.723 DEBUG 2924 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-09-27 23:35:22.952  INFO 2924 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-09-27 23:35:22.959  INFO 2924 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2022-09-27 23:35:23.023  INFO 2924 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-09-27 23:35:23.044  INFO 2924 --- [restartedMain] c.e.petclinic.PetClinicApplication       : Started PetClinicApplication in 2.691 seconds (JVM running for 3.268)
+2022-09-27 23:35:23.503  INFO 2924 --- [RMI TCP Connection(1)-192.168.1.33] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-27 23:35:23.503  INFO 2924 --- [RMI TCP Connection(1)-192.168.1.33] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-09-27 23:35:23.503 DEBUG 2924 --- [RMI TCP Connection(1)-192.168.1.33] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-09-27 23:35:23.503 DEBUG 2924 --- [RMI TCP Connection(1)-192.168.1.33] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-09-27 23:35:23.503 DEBUG 2924 --- [RMI TCP Connection(1)-192.168.1.33] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-09-27 23:35:23.504 DEBUG 2924 --- [RMI TCP Connection(1)-192.168.1.33] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@65a1e3f7
+2022-09-27 23:35:23.505 DEBUG 2924 --- [RMI TCP Connection(1)-192.168.1.33] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@2dc68e7f
+2022-09-27 23:35:23.505 DEBUG 2924 --- [RMI TCP Connection(1)-192.168.1.33] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-09-27 23:35:23.505  INFO 2924 --- [RMI TCP Connection(1)-192.168.1.33] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-09-27 23:35:25.149 DEBUG 2924 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/rest/owners", parameters={}
+2022-09-27 23:35:25.159 DEBUG 2924 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.petclinic.web.PetClinicRestController#getOwners()
+2022-09-27 23:35:25.175 DEBUG 2924 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-27 23:35:25.176 DEBUG 2924 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[Owner{id=1, firstName='Kerim', lastName='Sekili'}, Owner{id=2, firstName='Ahmet', lastName='Eren'}, (truncated)...]
+2022-09-27 23:35:25.188 DEBUG 2924 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-09-27 23:39:41.424 DEBUG 2924 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/rest/owner?n=Sekili", parameters={masked}
+2022-09-27 23:39:41.426 DEBUG 2924 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.petclinic.web.PetClinicRestController#getOwners(String)
+2022-09-27 23:39:41.430 DEBUG 2924 --- [http-nio-8080-exec-4] o.s.web.method.HandlerMethod             : Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<java.util.List<com.example.petclinic.model.Owner>> com.example.petclinic.web.PetClinicRestController.getOwners(java.lang.String): Required request parameter 'ln' for method parameter type String is not present
+2022-09-27 23:39:41.432  WARN 2924 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'ln' for method parameter type String is not present]
+2022-09-27 23:39:41.432 DEBUG 2924 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2022-09-27 23:39:41.434 DEBUG 2924 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error?n=Sekili", parameters={masked}
+2022-09-27 23:39:41.436 DEBUG 2924 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2022-09-27 23:39:41.453 DEBUG 2924 --- [http-nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
+2022-09-27 23:39:41.456 DEBUG 2924 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 400
+2022-09-27 23:40:05.851 DEBUG 2924 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/rest/owner?ln=Sekili", parameters={masked}
+2022-09-27 23:40:05.852 DEBUG 2924 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.petclinic.web.PetClinicRestController#getOwners(String)
+2022-09-27 23:40:05.857 DEBUG 2924 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-27 23:40:05.857 DEBUG 2924 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[Owner{id=1, firstName='Kerim', lastName='Sekili'}]]
+2022-09-27 23:40:05.858 DEBUG 2924 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-09-27 23:40:36.324 DEBUG 2924 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/rest/owner/1", parameters={}
+2022-09-27 23:40:36.326 DEBUG 2924 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.petclinic.web.PetClinicRestController#getOwner(Long)
+2022-09-27 23:40:36.332 DEBUG 2924 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-27 23:40:36.332 DEBUG 2924 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Owner{id=1, firstName='Kerim', lastName='Sekili'}]
+2022-09-27 23:40:36.333 DEBUG 2924 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-09-27 23:45:57.150 DEBUG 2924 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/rest/owner?ln=Sekili", parameters={masked}
+2022-09-27 23:45:57.151 DEBUG 2924 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.petclinic.web.PetClinicRestController#getOwners(String)
+2022-09-27 23:45:57.152 DEBUG 2924 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, application/*+json] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-27 23:45:57.152 DEBUG 2924 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[Owner{id=1, firstName='Kerim', lastName='Sekili'}]]
+2022-09-27 23:45:57.153 DEBUG 2924 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK

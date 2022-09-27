@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebFilter(filterName = "TestFilter")
+//@WebFilter(filterName = "TestFilter")
 public class TestFilter implements Filter {
     public void init(FilterConfig config) throws ServletException {
     }

@@ -4,6 +4,7 @@ import com.example.petclinic.model.Owner;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
 import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
@@ -15,7 +16,7 @@ import java.util.stream.Collectors;
 public class PetClinicRestControllerTest {
     private RestTemplate restTemplate;
 
-    @Before
+    @BeforeEach
     public void setUp(){
         restTemplate = new RestTemplate();
     }
