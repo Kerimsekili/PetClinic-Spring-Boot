@@ -18,7 +18,7 @@ public class PetClinicRestController {
     @RequestMapping(method = RequestMethod.GET, value = "/owners")
     public ResponseEntity<List<Owner>> getOwners() {
         List<Owner> owners = petClinicService.findOwners();
-        return ResponseEntity.ok(owners);
+        return ResponseEntity.ok().body(owners);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/owner")
