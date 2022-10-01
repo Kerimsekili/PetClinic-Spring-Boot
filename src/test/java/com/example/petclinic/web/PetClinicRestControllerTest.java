@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
@@ -32,8 +33,8 @@ public class PetClinicRestControllerTest {
         try {
             restTemplate.getForEntity("http://localhost:8080/rest/owner/1",Owner.class);
             Assert.fail("should have not returned owner");
-        }catch (RestClientException ex){
-
+        }catch (HttpClientErrorException ex){
+            MatcherAssert.assertThat(ex.getStatusCode().value(),Matchers.equalTo(404));
         }
     }
 
