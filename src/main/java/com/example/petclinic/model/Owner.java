@@ -40,7 +40,6 @@ public class Owner {
     }
 
     @XmlTransient//XML CONFİGİNDE SORUN VAR. fix it
-    @JsonIgnore //Maybe I can Delete this
     public Set<Pet> getPets() {
         return pets;
     }

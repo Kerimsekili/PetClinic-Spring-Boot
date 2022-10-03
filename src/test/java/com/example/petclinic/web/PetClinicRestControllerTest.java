@@ -5,8 +5,7 @@ import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestClientException;
@@ -20,7 +19,7 @@ import java.util.stream.Collectors;
 public class PetClinicRestControllerTest {
     private RestTemplate restTemplate;
 
-    @BeforeEach
+    @Before
     public void setUp() {
         restTemplate = new RestTemplate();
     }
@@ -90,8 +89,7 @@ public class PetClinicRestControllerTest {
     public void testGetOwners() {
         ResponseEntity<List> response = restTemplate.getForEntity("http://localhost:8080/rest/owners", List.class);
 
-        MatcherAssert.assertThat(response.getStatusCode(), Matchers.equalTo(200));
-
+        MatcherAssert.assertThat(response.getStatusCodeValue(), Matchers.equalTo(200));
         List<Map<String, String>> body = response.getBody();
 
         List<String> firstNames = body.stream().map(e -> e.get("firstName")).collect(Collectors.toList());

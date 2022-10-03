@@ -5,15 +5,14 @@ import com.example.petclinic.exception.OwnerNotFoundException;
 import com.example.petclinic.model.Owner;
 import com.example.petclinic.service.PetClinicService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.Link;
-import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
+import org.springframework.hateoas.Resource;
+import org.springframework.hateoas.mvc.ControllerLinkBuilder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import javax.annotation.Resource;
 import java.net.URI;
 import java.util.List;
 
@@ -69,16 +68,16 @@ public class PetClinicRestController{
         return ResponseEntity.ok().body(owners);
     }
 
-    @RequestMapping(method = RequestMethod.GET,value = "/owner/{id}",produces = "application/json")
-    public ResponseEntity<?> getOwnerAsHateoasResource(Long id){
+    @RequestMapping(method = RequestMethod.GET, value = "/sahip/{id}",produces="application/json")
+    public ResponseEntity<?> getOwnerAsHateoasResource(@PathVariable("id") Long id) {
         try {
             Owner owner = petClinicService.findOwner(id);
-            Link self = WebMvcLinkBuilder.linkTo(PetClinicRestController.class).slash("/owner/"+id).withSelfRel();
-            Link create = WebMvcLinkBuilder.linkTo(PetClinicRestController.class).slash("/owner").withRel("create");
-            Link update = WebMvcLinkBuilder.linkTo(PetClinicRestController.class).slash("/owner"+id).withRel("update");
-            Link delete = WebMvcLinkBuilder.linkTo(PetClinicRestController.class).slash("/owner"+id).withRel("delete");
-            EntityModel<Owner> resource = EntityModel.of(owner,self,create,update,delete);//New Syntax
-            return ResponseEntity.ok(owner);
+            Link self = ControllerLinkBuilder.linkTo(PetClinicRestController.class).slash("/owner/" + id).withSelfRel();
+            Link create = ControllerLinkBuilder.linkTo(PetClinicRestController.class).slash("/owner").withRel("create");
+            Link update = ControllerLinkBuilder.linkTo(PetClinicRestController.class).slash("/owner/" + id).withRel("update");
+            Link delete = ControllerLinkBuilder.linkTo(PetClinicRestController.class).slash("/owner/" + id).withRel("delete");
+            Resource<Owner> resource = new Resource<Owner>(owner, self,create,update,delete);
+            return ResponseEntity.ok(resource);
         } catch (OwnerNotFoundException ex) {
             return ResponseEntity.notFound().build();
         }
@@ -91,7 +90,7 @@ public class PetClinicRestController{
         return ResponseEntity.ok(owners);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/owner/{id}")
+    @RequestMapping(method = RequestMethod.GET, value = "/owner/{id}",produces = { "application/xml", "text/xml" })
     public ResponseEntity<Owner> getOwner(@PathVariable("id") Long id) {
         try {
             Owner owner = petClinicService.findOwner(id);
