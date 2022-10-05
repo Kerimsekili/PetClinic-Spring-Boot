@@ -8,7 +8,7 @@ INSERT INTO t_owner (id,first_name,last_name) VALUES (7, 'Aslı', 'Zor');
 INSERT INTO t_owner (id,first_name,last_name) VALUES (8, 'Murat', 'Eski');
 INSERT INTO t_owner (id,first_name,last_name) VALUES (9, 'Davut', 'Saz');
 INSERT INTO t_owner (id,first_name,last_name) VALUES (10, 'Kadir', 'Mutlu');
-INSERT INTO t_owner (id,first_name,last_name) VALUES (10, 'Furkan', 'Sekili');
+INSERT INTO t_owner (id,first_name,last_name) VALUES (11, 'Furkan', 'Sekili');
 
 INSERT INTO t_pet (id,pet_name,birth_date,owner_id) VALUES (1, 'Maviş', '2005-09-07', 1);
 INSERT INTO t_pet (id,pet_name,birth_date,owner_id) VALUES (2, 'Donetello', '2008-08-06', 1);
