@@ -13,6 +13,13 @@ public class PetClinicController {
     @Autowired
     private PetClinicService petClinicService;
 
+    @RequestMapping("/login.html")
+    public ModelAndView login(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("login");
+        return modelAndView;
+    }
+
     @RequestMapping(value = {"/","/index.html"})
     public ModelAndView index(){
         ModelAndView mav = new ModelAndView();
