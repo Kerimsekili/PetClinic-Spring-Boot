@@ -5,7 +5,7 @@ create table public.t_owner(
 );
 create table public.t_pet(
     id int not null ,
-    pet_name varchar(50),
+    name varchar(50),
     birth_date date,
     owner_id int
 
