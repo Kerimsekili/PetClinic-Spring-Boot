@@ -6,6 +6,7 @@ import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.support.BasicAuthorizationInterceptor;
 import org.springframework.web.client.HttpClientErrorException;
@@ -34,6 +35,7 @@ public class PetClinicRestControllerTest {
     @Test
     public void testDeleteOwner(){
         restTemplate.delete("http://localhost:8080/rest/owner/1");
+        //restTemplate.exchange("http://localhost:8080/rest/owner/1", HttpMethod.DELETE,null, Void.class);
 
         try {
             restTemplate.getForEntity("http://localhost:8080/rest/owner/1",Owner.class);
