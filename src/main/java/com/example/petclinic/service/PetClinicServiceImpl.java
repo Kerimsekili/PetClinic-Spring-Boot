@@ -5,6 +5,8 @@ import com.example.petclinic.dao.PetRepository;
 import com.example.petclinic.exception.OwnerNotFoundException;
 import com.example.petclinic.model.Owner;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -19,6 +21,9 @@ public class PetClinicServiceImpl implements PetClinicService{
     private OwnerRepository ownerRepository;
 
     private PetRepository petRepository;
+
+    @Autowired
+    private JavaMailSender mailSender;
 
     @Autowired
     public void setOwnerRepository(OwnerRepository ownerRepository) {
@@ -54,6 +59,14 @@ public class PetClinicServiceImpl implements PetClinicService{
     @Override
     public void createOwner(Owner owner) {
         ownerRepository.create(owner);
+
+        SimpleMailMessage msg = new SimpleMailMessage();
+        msg.setFrom("k@s");
+        msg.setTo("m@y");
+        msg.setSubject("Owner Created ! ");
+        msg.setText("Owner entity with id : "+ owner.getId() +"created successfully!");
+
+        mailSender.send(msg);
     }
 
     @Override
