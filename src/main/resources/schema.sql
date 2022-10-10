@@ -13,8 +13,8 @@ create unique index idx_auth_username on authorities(username,authority);
 
 create table public.t_owner(
     id int not null ,
-    first_name varchar(50),
-    last_name varchar(50)
+    first_name varchar(50) not null ,
+    last_name varchar(50) not null
 );
 create table public.t_pet(
     id int not null ,

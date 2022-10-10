@@ -6,12 +6,19 @@ import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.support.BasicAuthorizationInterceptor;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.HttpClientErrorException;
-import org.springframework.web.client.RestClientException;
-import org.springframework.web.client.RestTemplate;
 
 import java.net.URI;
 import java.util.Arrays;
@@ -19,16 +26,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+@RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@ActiveProfiles("dev")
 public class PetClinicRestControllerTest {
-    private RestTemplate restTemplate;
+
+    @Autowired
+    private TestRestTemplate restTemplate;
 
 
 
     @Before
     public void setUp() {
-        restTemplate = new RestTemplate();
-        BasicAuthorizationInterceptor basicAuthorizationInterceptor = new BasicAuthorizationInterceptor("user","secret");
-        restTemplate.setInterceptors(Arrays.asList(basicAuthorizationInterceptor));
+        restTemplate = restTemplate.withBasicAuth("user2","secret");
     }
 
 
@@ -78,7 +88,7 @@ public class PetClinicRestControllerTest {
         ResponseEntity<Owner> response = restTemplate.getForEntity("http://localhost:8085/rest/owner/1", Owner.class);
 
         MatcherAssert.assertThat(response.getStatusCodeValue(), Matchers.equalTo(200));
-        //MatcherAssert.assertThat(response.getBody().getFirstName(), Matchers.equalTo("Kerim"));
+        MatcherAssert.assertThat(response.getBody().getFirstName(), Matchers.equalTo("Ziya"));
     }
 
     @Test
