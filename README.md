@@ -55,3 +55,4 @@ Implementations of JPA; Transaction, Cache, Validation and Performance aspects h
 - UNIT TEST
 - Data Repository
 - E-mail sender(fakeSMTP)
+- Logging
