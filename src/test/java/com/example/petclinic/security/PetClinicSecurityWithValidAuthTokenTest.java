@@ -13,6 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
 import org.springframework.security.authentication.TestingAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.nio.file.AccessDeniedException;
@@ -20,6 +21,7 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(properties = "spring.profiles.active=dev")
+@WithMockUser(username = "user", password = "secret", authorities = "ROLE_USER")
 public class PetClinicSecurityWithValidAuthTokenTest {
 
     @Autowired

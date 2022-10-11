@@ -10,8 +10,10 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +31,7 @@ import java.util.stream.Collectors;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @ActiveProfiles("dev")
+@AutoConfigureMockMvc
 public class PetClinicRestControllerTest {
 
     @Autowired
@@ -112,7 +115,7 @@ public class PetClinicRestControllerTest {
 
         List<String> firstNames = body.stream().map(e -> e.get("firstName")).collect(Collectors.toList());
 
-        MatcherAssert.assertThat(firstNames, Matchers.containsInAnyOrder("Kerim", "Ahmet", "Zeynep", "Selinay"));
+        MatcherAssert.assertThat(firstNames, Matchers.containsInAnyOrder("Ziya","Beşir"));
     }
 
 }

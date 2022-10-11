@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
+import javax.validation.ConstraintViolationException;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -25,7 +26,7 @@ public class OwnerRepositoryTest {
     @PersistenceContext
     private EntityManager entityManager;
 
-    @Test(expected = PersistenceException.class)
+    @Test(expected = ConstraintViolationException.class)
     public void testCreateOwner(){
         Owner owner = new Owner();
         owner.setFirstName(null);

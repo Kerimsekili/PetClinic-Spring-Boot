@@ -7,7 +7,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -22,25 +21,22 @@ import org.springframework.web.servlet.ModelAndView;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 @ActiveProfiles("dev")
 @AutoConfigureMockMvc
-@WithMockUser(username = "user",password = "secret",authorities = "ROLE_USER")
-@ComponentScan(basePackages = "com.example.petclinic")
-public class OwnersWebMvcTest {
+@WithMockUser(username = "user3", password = "secret", authorities = "USER")
+public class OwnersWebMvcTest1{
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    public void testOwners() throws Exception{
-
-        MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/owners");
+    public void testOwners() throws Exception {
+        MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/mvc/owners");
 
         ResultActions resultActions = mockMvc.perform(requestBuilder);
-
         MvcResult mvcResult = resultActions.andReturn();
 
-        ModelAndView mav = mvcResult.getModelAndView();
-
-        MatcherAssert.assertThat(mav.getViewName(), Matchers.equalTo("owners"));
-        MatcherAssert.assertThat(mav.getModel().containsKey("owners"),Matchers.is(true));
+        ModelAndView modelAndView = mvcResult.getModelAndView();
+        assert modelAndView != null;
+        MatcherAssert.assertThat(modelAndView.getViewName(), Matchers.equalTo("owners"));
+        MatcherAssert.assertThat(modelAndView.getModel().containsKey("owners"), Matchers.is(true));
     }
 }

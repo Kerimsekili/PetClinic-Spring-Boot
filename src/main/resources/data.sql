@@ -2,13 +2,6 @@ INSERT INTO users values ('user1','{bcrypt}$2a$10$bLQMwAjvCWTllvGzwmz2t.eibys8SE
 INSERT INTO users values ('user2','{bcrypt}$2a$10$ENtWwBVs9ZOor1yvVf87k..wJZU2bbYJekvWNRNFKjYRvydkxOCkm',true);
 INSERT INTO users values ('user3','{bcrypt}$2a$10$ouL3WpyaUssMu8haKxPGy.gebnXAoSlDC5rHjd6H17CDsZuGArqxe',true);
 
-INSERT INTO authorities values ('user1','ROLE_USER');
-INSERT INTO authorities values ('user2','ROLE_USER');
-INSERT INTO authorities values ('user2','ROLE_EDITOR');
-INSERT INTO authorities values ('user3','ROLE_USER');
-INSERT INTO authorities values ('user3','ROLE_EDITOR');
-INSERT INTO authorities values ('user3','ROLE_ADMIN');
-
 INSERT INTO t_owner (id,first_name,last_name) VALUES (1, 'Ziya', 'Ferit');
 INSERT INTO t_owner (id,first_name,last_name) VALUES (2, 'Beşir', 'Dal');
 INSERT INTO t_owner (id,first_name,last_name) VALUES (3, 'Eda', 'Rize');
@@ -19,7 +12,6 @@ INSERT INTO t_owner (id,first_name,last_name) VALUES (7, 'Aslı', 'Zor');
 INSERT INTO t_owner (id,first_name,last_name) VALUES (8, 'Murat', 'Eski');
 INSERT INTO t_owner (id,first_name,last_name) VALUES (9, 'Davut', 'Saz');
 INSERT INTO t_owner (id,first_name,last_name) VALUES (10, 'Kadir', 'Mutlu');
-INSERT INTO t_owner (id,first_name,last_name) VALUES (11, 'Furkan', 'Sekili');
 
 INSERT INTO t_pet (id,name,birth_date,owner_id) VALUES (1, 'Maviş', '2005-09-07', 1);
 INSERT INTO t_pet (id,name,birth_date,owner_id) VALUES (2, 'Donetello', '2008-08-06', 1);
@@ -34,3 +26,13 @@ INSERT INTO t_pet (id,name,birth_date,owner_id) VALUES (10, 'Karaburun', '2009-0
 INSERT INTO t_pet (id,name,birth_date,owner_id) VALUES (11, 'Twetty', '2000-03-09', 7);
 INSERT INTO t_pet (id,name,birth_date,owner_id) VALUES (12, 'Tarçın', '2000-06-24', 8);
 INSERT INTO t_pet (id,name,birth_date,owner_id) VALUES (13, 'Sarı', '2002-06-08', 9);
+
+INSERT INTO t_vet (id,first_name,last_name) VALUES (14, 'Ali', 'Güç');
+INSERT INTO t_vet (id,first_name,last_name) VALUES (15, 'Bekir', 'Sağ');
+INSERT INTO t_vet (id,first_name,last_name) VALUES (16, 'Esma', 'Kul');
+
+INSERT INTO AUTHORITIES VALUES('user1','ROLE_USER');
+INSERT INTO AUTHORITIES VALUES('user2','ROLE_USER');
+INSERT INTO AUTHORITIES VALUES('user2','ROLE_EDITOR');
+INSERT INTO AUTHORITIES VALUES('user3','ROLE_USER');
+INSERT INTO AUTHORITIES VALUES('user3','ROLE_ADMIN');
