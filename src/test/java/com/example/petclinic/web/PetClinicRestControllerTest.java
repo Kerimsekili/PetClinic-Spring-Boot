@@ -16,6 +16,7 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.support.BasicAuthorizationInterceptor;
 import org.springframework.test.context.ActiveProfiles;
@@ -116,6 +117,16 @@ public class PetClinicRestControllerTest {
         List<String> firstNames = body.stream().map(e -> e.get("firstName")).collect(Collectors.toList());
 
         MatcherAssert.assertThat(firstNames, Matchers.containsInAnyOrder("Ziya","Beşir"));
+    }
+
+    @Test
+    public void testServiceLevelValidation(){
+        Owner owner = new Owner();
+        //owner.setFirstName("K");
+        //owner.setLastName("S");
+
+     ResponseEntity<URI> response =  restTemplate.postForEntity("http://localhost:/rest/owner",owner, URI.class);
+     MatcherAssert.assertThat(response.getStatusCode(),Matchers.equalTo(HttpStatus.PRECONDITION_FAILED));
     }
 
 }
